@@ -1,4 +1,4 @@
-baseurl = "stoic-pasteur-81104d.netlify.app"
+baseurl = "https://PersonalWebsiteWithBlogdown/"
 title = "Izbornik"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"

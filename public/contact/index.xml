@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kontaktiraj me on Izbornik</title>
-    <link>stoic-pasteur-81104d.netlify.app/contact/</link>
+    <link>https://PersonalWebsiteWithBlogdown/contact/</link>
     <description>Recent content in Kontaktiraj me on Izbornik</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="stoic-pasteur-81104d.netlify.app/contact/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://PersonalWebsiteWithBlogdown/contact/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
