@@ -2,44 +2,44 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Izbornik</title>
-    <link>https://PersonalWebsiteWithBlogdown/tags/</link>
+    <link>https://personalwebsitewithblogdown/tags/</link>
     <description>Recent content in Tags on Izbornik</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://PersonalWebsiteWithBlogdown/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://personalwebsitewithblogdown/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>glazba</title>
-      <link>https://PersonalWebsiteWithBlogdown/tags/glazba/</link>
+      <link>https://personalwebsitewithblogdown/tags/glazba/</link>
       <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://PersonalWebsiteWithBlogdown/tags/glazba/</guid>
+      <guid>https://personalwebsitewithblogdown/tags/glazba/</guid>
       <description></description>
     </item>
     
     <item>
       <title>plot</title>
-      <link>https://PersonalWebsiteWithBlogdown/tags/plot/</link>
+      <link>https://personalwebsitewithblogdown/tags/plot/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://PersonalWebsiteWithBlogdown/tags/plot/</guid>
+      <guid>https://personalwebsitewithblogdown/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://PersonalWebsiteWithBlogdown/tags/r-markdown/</link>
+      <link>https://personalwebsitewithblogdown/tags/r-markdown/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://PersonalWebsiteWithBlogdown/tags/r-markdown/</guid>
+      <guid>https://personalwebsitewithblogdown/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://PersonalWebsiteWithBlogdown/tags/regression/</link>
+      <link>https://personalwebsitewithblogdown/tags/regression/</link>
       <pubDate>Tue, 01 Dec 2020 21:13:14 -0500</pubDate>
       
-      <guid>https://PersonalWebsiteWithBlogdown/tags/regression/</guid>
+      <guid>https://personalwebsitewithblogdown/tags/regression/</guid>
       <description></description>
     </item>
     
