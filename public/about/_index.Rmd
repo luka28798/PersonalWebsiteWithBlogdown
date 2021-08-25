@@ -1,0 +1,37 @@
+---
+title: "O meni"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<style>
+.tldr{display: flex; flex-direction: row-reverse; flex-wrap: wrap}
+.imageCont{display: flex; flex-direction: row; flex-wrap: wrap; max-width: 100%; align-items: center; justify-content: center;  margin: 1rem 0;}
+.imageCont img {max-width: 175px; height: 100%; object-fit: cover; }
+.imageCont figure{margin: 0 5px; height: 175px;}
+.headerImg{margin: 0 0.5rem; display: flex; justify-content: center; overflow: hidden; border-radius: 50%; width: 250px; height: 240px; align-items: center; border: 4px solid var(--content); box-shadow: var(--mainShadow)}
+.tldr-text{flex: 45%; margin: 0 1rem; margin-bottom: 10px}
+.headerImg img{width: 250px; margin: 0 auto; height: 250px; object-fit: cover; mix-blend-mode: normal}
+</style>
+
+<div class='tldr'>
+<div class='tldr-text'>
+## Osobni podaci
+Luka Strapač \
+28.07.1998. \
+N. Š. Zrinskog 19, Markovac Našički \
+31500 Našice
+
+
+</div>
+<div class='headerImg'>
+![](/img/myProfile.jpg)
+</div>
+</div>
+
+\
+Pozdrav, ja sam Luka. Živim u Našicama i studiram na Odjelu za matematiku, trenutno na 3. godini preddiplomskog studija Matematika i računarstvo. \
+
+U slobodno vrijeme volim gledati nogomet i filmove, a ponekad i zaigrati neku igricu.

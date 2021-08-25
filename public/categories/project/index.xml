@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>project on Izbornik</title>
+    <link>stoic-pasteur-81104d.netlify.app/categories/project/</link>
+    <description>Recent content in project on Izbornik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 19 Aug 2021 00:00:00 +0000</lastBuildDate><atom:link href="stoic-pasteur-81104d.netlify.app/categories/project/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TOP 10 HR</title>
+      <link>stoic-pasteur-81104d.netlify.app/home/top10glazba/</link>
+      <pubDate>Thu, 19 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>stoic-pasteur-81104d.netlify.app/home/top10glazba/</guid>
+      <description>
+&lt;script src=&#34;stoic-pasteur-81104d.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Popis najboljih 10 hrvatskih pjesama po mom izboru.
+</description>
+    </item>
+    
+  </channel>
+</rss>
