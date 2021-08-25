@@ -1,0 +1,8 @@
+<div class="copyright text-center" style="display: flex,justify-content: center,align-items: center;" >
+      
+        {{ with .Site.Params.copyright }}
+          {{ . | safeHTML }} 
+        {{ end }}
+        {{ partial "attribution.html" . }}
+     
+    </div>

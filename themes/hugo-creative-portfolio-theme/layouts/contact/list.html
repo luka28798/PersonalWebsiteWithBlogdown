@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
+  {{ partial "mobile_nav_toggle.html" . }}
+  <div class="row">
+    <div class="col-lg-8">
+      <div class="content-column-content">
+         <h1>{{ .Title }}</h1>
+         {{ .Content }}
+         <div class = "text-center">
+          {{ partial "social_buttons_in_contact.html" . }}
+         {{ with .Site.Params.email }}
+
+         {{ end }}
+         </div>
+         <p class = "text-secondary">ili putem mobilnog telefona</p>
+         <div class = "text-center text-secondary"><span><i class="fa fa-mobile " aria-hidden="true"></i><a>
+         +385957760765</a></span></div>
+         
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

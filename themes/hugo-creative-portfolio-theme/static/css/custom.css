@@ -1,0 +1,32 @@
+/* your styles go here */
+
+.details__date{
+  font-family: var(--annotationFont);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--tertiary);
+  margin-top: 5px;
+  line-height: 20px;
+}
+
+.details__date p{
+  margin: 0;
+}
+
+.item__meta{
+  margin-top: 20px;
+}
+
+
+.item__meta-link:hover{
+  color: var(--elevationHover);
+  background-color: var(--accent);
+  box-shadow: var(--shadowHover);
+  transition: var(--fastFade);
+}
+
+.card-tag{
+  font-family: var(--bodyFont);
+  color: var(--accent);
+  font-size: 12px;
+}
