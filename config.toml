@@ -1,4 +1,4 @@
-baseurl = "https://personalwebsitewithblogdown.netlify.com/"
+baseurl = "https://personalwebsitewithblogdown.netlify.app/"
 title = "Izbornik"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
