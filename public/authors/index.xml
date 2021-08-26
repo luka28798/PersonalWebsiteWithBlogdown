@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors on Izbornik</title>
-    <link>https://personalwebsitewithblogdown/authors/</link>
+    <link>https://personalwebsitewithblogdown.netlify.com/authors/</link>
     <description>Recent content in Authors on Izbornik</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://personalwebsitewithblogdown/authors/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://personalwebsitewithblogdown.netlify.com/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

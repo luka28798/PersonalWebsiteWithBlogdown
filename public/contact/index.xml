@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kontaktiraj me on Izbornik</title>
-    <link>https://personalwebsitewithblogdown/contact/</link>
+    <link>https://personalwebsitewithblogdown.netlify.com/contact/</link>
     <description>Recent content in Kontaktiraj me on Izbornik</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://personalwebsitewithblogdown/contact/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://personalwebsitewithblogdown.netlify.com/contact/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
