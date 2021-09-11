@@ -9,6 +9,8 @@ googleAnalytics = ""
 
 preserveTaxonomyNames = true
 
+permalinks = "post: /:year/:month/:day/:slug/"
+
 [taxonomies]
   author = "authors"
   tag = "tags"

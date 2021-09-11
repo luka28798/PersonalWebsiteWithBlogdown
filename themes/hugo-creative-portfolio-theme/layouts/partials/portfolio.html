@@ -1,6 +1,7 @@
-<div class="col-xs-12 col-sm-8 col-md-9 content-column">
+
+<div class="col-xs-12 col-sm-8 col-md-6 content-column white-background">
     {{ partial "mobile_nav_toggle.html" . }}
-    <div class="grid">
+    
         <div class="row">
           {{ range .Data.Pages }}
               <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item">
@@ -20,7 +21,13 @@
                       {{ else }}
                       <div class="box-masonry-text">
                       {{ end }}
+                      <div class = "">
+                        
+                          <span class='card-tag'>{{ with .Params.categories }}{{ delimit . ", "}}{{ end }}</span>
                           
+                      </div>
+                          
+
                           <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
                           <div class="details__date">
                                 <p style="font-size:12px">{{ .Date.Format "January 2 2006" }}</p>
@@ -51,3 +58,5 @@
         </div>
     </div>
 </div>
+
+

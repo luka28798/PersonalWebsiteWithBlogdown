@@ -1,0 +1,71 @@
+
+
+---
+image: "img/portfolio/music.png"
+title: "TOP 10 HR"
+output: html_document
+date: '2021-08-19'
+categories:
+  - project
+  - glazba
+tags:
+  - glazba
+---
+  
+  
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+Popis najboljih 10 hrvatskih pjesama po mom izboru.
+<!--more-->
+
+## 10. Oliver & Gibonni - Sreća
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/1wQfYvdpEd8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 9. Big Blue - Priznaj mi
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/RIkJk6aRqKY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 8. Tomislav Bralić & klapa Intrade - Zora bila
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/bB_KhpennuM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 7. Dražen Zečić - Sokole
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/7pFGSvpa26o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 6. Vinko Coce - Dalmacija
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/Q2aM9Vv_O3U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 5. Gibonni - Libar
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/VSOk3z8C_Gc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 4. Mišo Kovač - Ako me ostaviš
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/7FGnt-z0qE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 3. Dino Dvornik - Pelin i med
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/vSt5rLAQ9Iw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 2. Krunoslav Kićo Slabinac - Zbog jedne divne crne žene
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/n1LIrn6yZ_c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---
+
+## 1. Oliver - Trag u beskraju
+
+<iframe width="669" height="502" src="https://www.youtube.com/embed/a1ntcOHewkg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+---

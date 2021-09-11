@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>instructions on Izbornik</title>
+    <link>https://personalwebsitewithblogdown.netlify.app/categories/instructions/</link>
+    <description>Recent content in instructions on Izbornik</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 11 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://personalwebsitewithblogdown.netlify.app/categories/instructions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Postupak izrade web stranice</title>
+      <link>https://personalwebsitewithblogdown.netlify.app/home/postupak_izrade/</link>
+      <pubDate>Sat, 11 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://personalwebsitewithblogdown.netlify.app/home/postupak_izrade/</guid>
+      <description>
+&lt;script src=&#34;https://personalwebsitewithblogdown.netlify.app/rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+&lt;link href=&#34;https://personalwebsitewithblogdown.netlify.app/rmarkdown-libs/font-awesome/css/all.css&#34; rel=&#34;stylesheet&#34; /&gt;
+&lt;link href=&#34;https://personalwebsitewithblogdown.netlify.app/rmarkdown-libs/font-awesome/css/v4-shims.css&#34; rel=&#34;stylesheet&#34; /&gt;
+
+
+&lt;p&gt;Detaljni postupak izrade web stranice pomoću paketa blogdown.
+</description>
+    </item>
+    
+  </channel>
+</rss>

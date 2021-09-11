@@ -1,0 +1,166 @@
+---
+title: "Postupak izrade web stranice"
+author: "Luka S."
+date: '2021-09-11'
+image: "img/portfolio/writing-procedure.png"
+output: html_document
+categories:
+  - project
+  - instructions
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, include = FALSE}
+htmltools::tagList(rmarkdown::html_dependency_font_awesome())
+```
+
+Detaljni postupak izrade web stranice pomoću paketa blogdown.
+<!--more-->
+
+-   [Kreiranje Github repozitorija](#kreiranje_github_repozitorija)
+
+-   [Instaliranje potrebnih paketa](#instaliranje_potrebnih_paketa)
+    
+-   [Stvaranje stranice, pretpregled stranice i odabir teme](#stvaranje_stranice_pretpregled_stranice_odabir_teme)
+
+-   [Github i Netlify](#github_netlify)
+    
+
+## Kreiranje Github repozitorija {#kreiranje_github_repozitorija}
+
+Prvo treba napraviti Github account (ukoliko već ne postoji;https://github.com/) i unutar njega novi repozitorij.  Nakon toga se taj repozitorij klonira lokalno bilo gdje naračunalo.
+
+## Instaliranje potrebnih paketa {#instaliranje_potrebnih_paketa}
+
+Sljedeći korak u izradi web stranice je kreiranje projekta i instalacija paketa koji su neophodni za daljnje korake. Pokrene se RStudio (https://www.rstudio.com/products/rstudio/#rstudio-desktop), u gornjem lijevom kutu odabere se File → New Project → Existing directory i navigira se unutar lokalne kopije repozitorija i tu se napravi projekt. Nakon toga, u konzoli (paziti da putanja u konzoli završava u repozitoriju) se instalira paket blogdown, te se odmah zatim učita i onda se iz tog paketa instalira hugo.
+
+<center>
+
+![Instalacija paketa blogdown](/home/postupak_izrade_files/install_blogdown.png){width=500px height=150px}
+
+</center>
+
+<center>
+
+![Učitavanje paketa blogdown](/home/postupak_izrade_files/load_blogdown.png){width=500px height=150px}
+
+</center>
+
+<center>
+
+![Instalacija Huge](/home/postupak_izrade_files/install_hugo.png){width=500px height=150px}
+
+</center>
+
+## Stvaranje stranice, pretpregled stranice i odabir teme {#stvaranje_stranice_pretpregled_stranice_odabir_teme}
+
+Sada je sve spremno za stvoriti web stranicu. Stvaranje stranice se odrađuje u konzoli.
+
+<center>
+
+![Stvaranje stranice](/home/postupak_izrade_files/new_site.png){width=500px height=150px}
+
+</center>
+
+Ukoliko je stvaranje stranice prošlo uspješno, ovako bi trebalo izgledati stanje unutar aplikacije:
+
+<center>
+
+![Editor nakon stvaranja stranice](/home/postupak_izrade_files/editor.png){width=500px height=400px}
+
+</center>
+
+<center>
+
+![Konzola nakon stvaranja stranice](/home/postupak_izrade_files/console.png){width=500px height=300px}
+
+</center>
+
+<center>
+
+![Datoteke nakon stvaranja stranice](/home/postupak_izrade_files/files.png){width=500px height=300px}
+
+</center>
+
+A sada, ukoliko se u konzoli upiše "y" te zatim u prozoru s datotekama, klikne na viewer,u tom prozoru trebao bi se prikazati pretpregled stranice.
+
+<center>
+
+![Pretpregled stranice](/home/postupak_izrade_files/viewer.png){width=500px height=300px}
+
+</center>
+
+Pretpregled stranice se može prikazati i u browseru, klikom na gumb "Show in new window", smješten ispod "Plots". Ugasiti pretpregled stranice se može uz pomoć naredbe "blogdown::stop_server()", a za ponovno pokretanje pretpregleda zadužena je naredba "blogdown::serve_site()".  Može se vidjeti da pod tabom "Files" unutar mape "themes" stoji"hugo-lithium" tema, koja je defaultna tema prilikom stvaranja stranice.  Teme su datoteke, koje su generirali neki drugi korisnici, za oblikovanje web stranice.  Unutar nje se nalaze datoteke čiji sadržaj generira izgled stranice kakav je prikazan u pretpregledu.Ukoliko se želi promijeniti tema, to se može učiniti putem konzole s naredbom "blogdown::install_theme("github_korisnicko_ime_autora_teme/naziv_teme", theme_example= TRUE, update_config = TRUE)". Tema se može odabrati na službenoj Hugo stranici(https://themes.gohugo.io/). Klikom na željenu temu, te zatim na gumb "Download" otvorit će se github repozitorij te teme, a u linku se može pronaći github korisničko ime autora teme i naziv teme, parametara koji su nam potrebni prilikom instalacije.
+
+<center>
+
+![Ime autora teme i naziv teme](/home/postupak_izrade_files/theme_author.png){width=300px height=150px}
+
+</center>
+
+Nakon instalacije ove teme, da bi se ona učitala, potrebno je ponovno pokrenuti pretpregled da bi se uočile promjene. Nakon ponovnog pokretanja, "Viewer" bi trebao izgledati ovako:
+
+<center>
+
+![Viewer nakon promjene teme](/home/postupak_izrade_files/change_theme.png){width=500px height=300px}
+
+</center>
+
+Izgled i sadržaj ove web stranice je naravno, moguće promijeniti po svojoj želji. Sada je sve spremno za zadnji korak, postavljanje web stranice "live", da joj može svatko pristupiti.
+
+<center>
+
+## Github i Netlify {#github_netlify}
+
+</center>
+
+Prvo što bi se trebalo napraviti je spremiti promjene na Github, u repozitorij. Ali prije samog spremanja promjena, treba "buildati" stranicu, kako bi se stvorila mapa "public", u kojoj će biti spremljen sav sadržaj koji će se prikazivati "live".
+
+<center>
+
+![Build stranice](/home/postupak_izrade_files/build_site.png){width=500px height=250px}
+
+</center>
+
+Nakon uspješnog build-a, u mapi "Files" trebala bi se pojaviti mapa "public". Ukoliko to nije slučaj, vjerojatno ili ne postoji datoteka "netlify.toml", ili postoji, ali unutar nje nedostaju postavke za build stranice, stoga ih je potrebno ručno dopisati (ako datoteka uopće ne postoji, potrebno ju je prvo stvoriti).
+
+<center>
+
+![Postavke za build stranice](/home/postupak_izrade_files/build_properties.png){width=200px height=150px}
+
+</center>
+
+Sada se treba ponoviti naredba za build stranice. Nakon tog, spremanje promjena na repozitorij odrađuje se u terminalu aplikacije RStudio, pomoću 3 naredbe. Prva naredba je"git add –all", druga "git commit -m "Izmjena"" i treća "git push". Više o naredbama nahttps://git-scm.com/docs. Zadnji dio postavljanja stranice "live", odrađuje se na https://www.netlify.com/. Treba se napraviti račun na Netlify i sinkronizirati ga s github računom.  Nakon toga,potrebno je kliknuti na "New site from Git", spojiti se na Git-ov pružatelj usluga (Github), proći autorizaciju, odabrati repozitorij i na kraju postavke (trenutnu verziju Huge se može provjeriti u RStudiu, pomoću naredbe "blogdown::hugo_version()").
+
+<center>
+
+![Postavke za Netlify](/home/postupak_izrade_files/site_settings1.png){width=400px height=500px}
+
+</center>
+
+<center>
+
+![Dodatne postavke za Netlify](/home/postupak_izrade_files/site_settings2.png){width=400px height=400px}
+
+</center>
+
+Nakon klika na "Deploy site" potrebno je pričekati par sekundi dok se stranica postavi.
+
+<center>
+
+![Završetak postavljanja](/home/postupak_izrade_files/completed_page.png){width=250px height=150px}
+
+</center>
+
+Ako je stanje kao na slici iznad, klikom se može ući i vidjeti više detalja o tome kako je prošlo postavljanje. Klikom na "Preview deploy" se otvori novi prozor u kojem se nalazi "live" stranica.  Ukoliko se ne prikaže stranica, nego nešto slično ovome na slici ispod, potrebno je otići u "Deploy settings", te zatim na "Domain Management" pod "Custom domains" provjeriti da ime stranice odgovara baseurl unutar datoteke "config.toml" (ime stranice mora biti oblika "ime.netlify.app", a baseurl "https://ime.netlify.app/").
+
+<center>
+
+![Error prilikom učitavanja stranice](/home/postupak_izrade_files/not_found.png){width=250px height=150px}
+
+</center>
+
+Ukoliko baseurl nije bio dobrog oblika, nakon što se to popravi, potrebno je ponoviti postupak sa spremanjem promjena na github repozitorij.
