@@ -1,0 +1,13 @@
+---
+title: "PDF Dokument"
+author: "Luka S."
+date: '2021-08-19'
+output:
+  bookdown::pdf_document2:
+    toc: false
+---
+
+LaTeX kod u R Markdownu renderiran u pdf dokument
+<!--more-->
+[Pdf](../../pdf/pdfdocument.pdf)
+

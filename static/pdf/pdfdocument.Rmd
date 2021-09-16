@@ -1,0 +1,353 @@
+---
+header-includes:
+  - \usepackage{latexsym, amsfonts, amssymb, amsmath, amsbsy, amsthm, color, makeidx, float, indentfirst, caption}
+  - \usepackage[croatian]{babel}
+  - \usepackage[utf8]{inputenc}
+  - \usepackage[T1]{fontenc}
+  - \usepackage[makeroom]{cancel}
+  - \restylefloat{table}
+  - \usepackage{listings}
+  - \usepackage{color}
+  - \usepackage{hyperref}
+  - \usepackage{cleveref}
+  - \usepackage{graphicx}
+  - \pagestyle{myheadings}
+  - \renewcommand{\tablename}{Tablica}
+  - \renewcommand{\lstlistingname}{Kod}
+  - \definecolor{lightgray}{rgb}{.9,.9,.9}
+  - \definecolor{darkgray}{rgb}{.4,.4,.4}
+  - \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+  - \definecolor{greenn}{rgb}{0.2, 0.7, 0.2}
+output:
+  bookdown::pdf_document2:
+    toc: false
+---
+
+\baselineskip=17pt
+\begin{center}
+Sveučilište  J.J. Strossmayera u Osijeku\\
+Odjel za matematiku\\
+Sveučilišni preddiplomski studij Matematika i računarstvo\\
+\end{center}
+\vspace*{6cm}
+\begin{center}
+{\bf Luka Strapač \& Marko Šenk}
+\end{center}
+\begin{center}
+{\large\bf Blogdown: kreiranje web stranica pomoću R Markdowna}
+\end{center}
+\begin{center}
+Završni praktični projekt
+\end{center}
+\vspace*{4cm}
+\begin{flushright}
+\begin{tabular}{l}
+  Mentor: doc. dr. sc. Danijel Grahovac\\
+\end{tabular}
+\end{flushright}
+\vfill
+\begin{center}
+Osijek, 2021.
+\end{center}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+\section{Uvod}
+Cilj ovog završnog praktičnog projekta bio je pomoću blogdown-a (\textit{paket programskog jezika R, koji omogućava kreiranje statičkih web stranica direktno iz R Markdown skripti}) izraditi dva primjera bloga i kroz njihov sadržaj prezentirati prednosti blogdown-a. Prvi primjer je blog koji se bavi analizom podataka, a drugi primjer je osobna web stranica.
+\newpage
+\section{R (programski jezik)}
+R je programski jezik i softversko okruženje za statističku analizu, grafički prikaz i izvještaje. Spada među najpopularnije programske jezike koje koriste statističari, analitičari podataka, istraživači i online trgovci da bi analizirali, vizualizirali i prikazali podatke. Sve biblioteke ovog jezika nalaze se u CRAN-u (skraćeno od \textit{Comprehensive R Archive Network}), besplatnoj i open-source mreži.
+\subsection{RStudio}
+RStudio je integrirano razvojno okruženje za R. Neke od njegovih značajki uključuju prilagodljivo radno okruženje sa svim alatima na jednom mjestu potrebnim za rad sa R-om, izvršavanje koda direktno iz editora te rad na više platformi (konkretno Windows, Linux i Mac), odnosno RStudio je cross-platform software. Također, može se koristiti kao poslužitelj.
+\subsection{R Markdown}
+R Markdown je format za pisanje koji se koristi za jednostavnu izradu dinamičkih dokumenata, prezentacija i izvještaja iz R jezika. Ovaj format kombinira srž markdown sintakse, koja je jednostavna za pisanje (u običnom tekstualnom obliku) i manje dijelove ugrađenog koda (u nastavku \textbf{code chunks}) koji se pokreću da bi njihov rezultat bio uključen u konačni dokument.
+Na slici ispod, u lijevom prozoru, nalazi se .Rmd (R Markdown) datoteka.
+Sadrži 3 code chunk-a, koje prepoznajemo po  jedinstvenoj oznaci "```", koja stoji na početku i na kraju chunk-a. Uz oznaku, na početku se obavezno nalaze vitičaste zagrade, te unutar njih, slovo r i opcionalno još neki parametri. Slovo r označava programski jezik R.
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/code-chunks.png}
+    \caption{Code chunks unutar .Rmd dokumenta}
+    \label{fig:code-chunks}
+\end{figure} 
+
+.Rmd datoteke mogu biti renderane u više izlaznih formata, kao npr. html dokument, pdf, word, slideshow i ostalo. Dio datoteke ograničen sa oznakom "- - -" zove se metadata. U metadati mogu biti specificirani podaci kao što su naziv dokumenta, ime autora, datum i output datoteke. 
+
+U 3. liniji može se vidjeti da je kao output izabran html dokument, odnosno da će se ova .Rmd datoteka renderati u html. Ukoliko output nije specificiran, datoteka će se renderati u html.
+U desnom prozoru može se vidjeti pretpregled tog dokumenta. \\ \\
+Prije nego što se upoznamo s pojmom iz naslova ovog projekta, odnosno blogdown-om, moramo reći nešto o frameworku na kojem se blogdown bazira.
+
+\newpage
+
+\section{Hugo}
+Hugo je najpoznatiji generator statičkih stranica. Nasuprot drugih framework-a koji dinamički podižu stranicu za svaki zahtjev posjetitelja, Hugo pak podiže stranicu kada se stvori sadržaj ili nadoda novi sadržaj na već postojeći.
+
+Kako se stranice u puno većoj mjeri posjećuju, nego što se mijenjaju, Hugo je dizajniran da pruži optimalno iskustvo krajnjim korisnicima stranice i još bolje iskustvo autorima web stranice. Stranice koje su generirane sa ovim framework-om brze su i sigurne, te se mogu hostati na bilo kojoj poznatoj platformi.
+
+Način na koji Hugo podiže stranicu je da uzme cijeli direktorij sa sadržajem i predlošcima i rendera ih u HTML web stranicu. Dizajniran je tako da funkcionira dobro za bilo koju vrstu web stranice, uključujući blogove i dokumente, te se može koristiti na svim poznatijim operacijskim sustavima.
+
+\newpage
+
+\section{blogdown}
+blogdown je R paket koji kombinira R Markdown i Hugo za kreiranje web stranica. Nastao je zbog velike želje za integracijom R Markdown-a s generatorima statičkih web stranica, u svrhu da se omogući generiranje web stranica dinamički.
+
+Proizvod blogdown-a je statička web stranica koja se sastoji samo od statičkih elemenata kao što su HTML, CSS, JavaScript itd. Ova web stranica ne zahtijeva server-side skripte, za razliku od stranica napravljenih u PHP-u ili WordPress-u. Također, generirana je iz R Markdown dokumenata, što donosi brojne prednosti, pogotovo ako je sadržaj stranice analiza podataka ili R programiranje. 
+
+R Markdown daje prednosti dinamičkih dokumenata, odnosno, svi rezultati kao npr. tablice i grafički prikazi mogu biti izračunati i renderani dinamički iz R koda.
+
+\newpage
+
+\section{Postupak izrade web stranice}
+\subsection{Kreiranje Github repozitorija}
+Prvo treba napraviti Github account (ukoliko već ne postoji; \url{https://github.com/}) i unutar njega novi repozitorij. Nakon toga se taj repozitorij klonira lokalno bilo gdje na računalo.
+\subsection{Instaliranje potrebnih paketa}
+Sljedeći korak u izradi web stranice je kreiranje projekta i instalacija paketa koji su neophodni za daljnje korake. Pokrene se RStudio (\url{https://www.rstudio.com/products/rstudio/#rstudio-desktop)}, u gornjem lijevom kutu odabere se File $\rightarrow$ New Project $\rightarrow$ Existing directory i navigira se unutar lokalne kopije repozitorija i tu se napravi projekt. Nakon toga, u konzoli (\textit{paziti da putanja u konzoli završava u repozitoriju}) se instalira paket blogdown, te se odmah zatim učita i onda se iz tog paketa instalira hugo.
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/install_blogdown.png}
+    \caption{Instalacija paketa blogdown}
+    \label{fig:install_blogdown}
+\end{figure} 
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/load_blogdown.png}
+    \caption{Učitavanje paketa blogdown}
+    \label{fig:load_blogdown}
+\end{figure} 
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/install_hugo.png}
+    \caption{Instaliranje Huge}
+    \label{fig:install_hugo}
+\end{figure} 
+\subsection{Stvaranje stranice, pretpregled stranice i odabir teme}
+Sada je sve spremno za stvoriti web stranicu. Stvaranje stranice se odrađuje u konzoli.
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/new_site.png}
+    \caption{Stvaranje stranice}
+    \label{fig:new_site}
+    
+\end{figure} 
+\newpage
+Ukoliko je stvaranje stranice prošlo uspješno, ovako bi trebalo izgledati stanje unutar aplikacije:
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/editor.png}
+    \caption{Editor nakon stvaranja stranice}
+    \label{fig:editor}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/console.png}
+    \caption{Konzola nakon stvaranja stranice}
+    \label{fig:console}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/files.png}
+    \caption{Datoteke nakon stvaranja stranice}
+    \label{fig:files}
+\end{figure}
+A sada, ukoliko se u konzoli upiše "y" te zatim u prozoru s datotekama, klikne na viewer, u tom prozoru trebao bi se prikazati pretpregled stranice.
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/viewer.png}
+    \caption{Pretpregled stranice}
+    \label{fig:viewer}
+\end{figure}
+Pretpregled stranice se može prikazati i u browseru, klikom na gumb "Show in new window", smješten ispod "Plots". Ugasiti pretpregled stranice se može uz pomoć naredbe "blogdown::stop\_server()", a za ponovno pokretanje pretpregleda zadužena je naredba "blogdown::serve\_site()". Može se vidjeti da pod tabom "Files" unutar mape "themes" stoji "hugo\-lithium" tema, koja je defaultna tema prilikom stvaranja stranice. Teme su datoteke, koje  su generirali neki drugi korisnici, za oblikovanje web stranice. Unutar nje se nalaze datoteke čiji sadržaj generira izgled stranice kakav je prikazan u pretpregledu. Ukoliko se želi promijeniti tema, to se može učiniti putem konzole s naredbom "blogdown::install\_theme("github\_korisnicko\_ime\_autora\_teme/naziv\_teme", theme\_example = TRUE, update\_config = TRUE)". Tema se može odabrati na službenoj Hugo stranici (\url{https://themes.gohugo.io/}). Klikom na željenu temu, te zatim na gumb "Download" otvorit će se github repozitorij te teme, a u linku se može pronaći github korisničko ime autora teme i naziv teme, parametara koji su nam potrebni prilikom instalacije.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/theme_author.png}
+    \caption{Ime autora teme i naziv teme}
+    \label{fig:theme_author}
+\end{figure}
+Nakon instalacije ove teme, da bi se ona učitala, potrebno je ponovno pokrenuti pretpregled da bi se uočile promjene. Nakon ponovnog pokretanja, "Viewer" bi trebao izgledati ovako:
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/change_theme.png}
+    \caption{Viewer nakon promjene teme}
+    \label{fig:change_theme}
+\end{figure}
+
+Izgled i sadržaj ove web stranice je naravno, moguće promijeniti po svojoj želji. Sada je sve spremno za zadnji korak, postavljanje web stranice "live", da joj može svatko pristupiti.
+
+\subsection{Github i Netlify}
+Prvo što bi se trebalo napraviti je spremiti promjene na Github, u repozitorij. 
+Ali prije samog spremanja promjena, treba "buildati" stranicu, kako bi se stvorila mapa "public", u kojoj će biti spremljen sav sadržaj koji će se prikazivati "live". 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/build_site.png}
+    \caption{Build stranice}
+    \label{fig:build_site}
+\end{figure}
+
+Nakon uspješnog build-a, u mapi "Files" trebala bi se pojaviti mapa "public". Ukoliko to nije slučaj, vjerojatno ili ne postoji datoteka "netlify.toml", ili postoji, ali unutar nje nedostaju postavke za build stranice, stoga ih je potrebno ručno dopisati (ako datoteka uopće ne postoji, potrebno ju je prvo stvoriti).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/build_properties.png}
+    \caption{Postavke za build stranice}
+    \label{fig:build_properties}
+\end{figure}
+
+Sada se treba ponoviti naredba za build stranice. Nakon tog, spremanje promjena na repozitorij odrađuje se u terminalu aplikacije RStudio, pomoću 3 naredbe. Prva naredba je "git add --all", druga "git commit -m "Izmjena"" i treća "git push". Više o naredbama na \url{https://git-scm.com/docs}.
+
+Zadnji dio postavljanja stranice "live", odrađuje se na \url{https://www.netlify.com/}. Treba se napraviti račun na Netlify i sinkronizirati ga s github računom. Nakon toga, potrebno je kliknuti na "New site from Git", spojiti se na Git-ov pružatelj usluga (Github), proći autorizaciju, odabrati repozitorij i na kraju postavke (trenutnu verziju Huge se može provjeriti u RStudiu, pomoću naredbe "blogdown::hugo\_version()").
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/site_settings1.png}
+    \caption{Postavke za Netlify}
+    \label{fig:site_settings1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/site_settings2.png}
+    \caption{Dodatne postavke za Netlify}
+    \label{fig:site_settings2}
+\end{figure}
+
+Nakon klika na "Deploy site" potrebno je pričekati par sekundi dok se stranica postavi.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/completed_page.png}
+    \caption{Završetak postavljanja}
+    \label{fig:completed_page}
+\end{figure}
+
+Ako je stanje kao na slici iznad, klikom se može ući i vidjeti više detalja o tome kako je prošlo postavljanje. Klikom na "Preview deploy" se otvori novi prozor u kojem se nalazi "live" stranica. Ukoliko se ne prikaže stranica, nego nešto slično ovome na slici ispod, potrebno je otići u "Deploy settings", te zatim na "Domain Management" pod "Custom domains" provjeriti da ime stranice odgovara baseurl unutar datoteke "config.toml" (ime stranice mora biti oblika "ime.netlify.app", a baseurl "https://ime.netlify.app/"). 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/not_found.png}
+    \caption{Error prilikom učitavanja stranice}
+    \label{fig:not_found}
+\end{figure}
+
+Ukoliko baseurl nije bio dobrog oblika, nakon što se to popravi, potrebno je ponoviti postupak sa spremanjem promjena na github repozitorij.
+
+
+
+\newpage
+
+\section{Primjer osobne web stranice}
+Za izradu web stranice s analizom podataka korištena je tema \url{https://github.com/kishaningithub/hugo-creative-portfolio-theme}. Korisničko sučelje ove stranice sastoji se od izbornika smještenog lijevo i od sadržaja smještenog desno koji se mijenja ovisno o odabiru na izborniku. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/home_page.png}
+    \caption{Početna stranica}
+    \label{fig:home_page}
+\end{figure}
+
+Početna stranica sastoji se od postova čiji sadržaj se može detaljnije pregledati klikom na post. Novi post se može dodati direktno iz RStudia klikom na "Addins" pa na "New post".\\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/addins_new_post.png}
+    \caption{}
+    \label{fig:addins_new_post}
+\end{figure}
+
+
+Trebao bi se otvoriti obrazac koji izgleda kao ovaj na slici ispod.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/new_post_pattern.png}
+    \caption{Obrazac za novi post}
+    \label{fig:new_post_pattern}
+\end{figure}
+
+Treba se pripaziti što će se označiti pod "Subdirectory", jer to je mjesto gdje će novi post biti spremljen. Naziv od "Subdirectory" mape mora odgovarati nazivu navlinka na kojem se sadržaj prikazuje, u ovom slučaju "home".
+
+Nakon ispune obrasca, možemo vidjeti da se u mapi "home" stvorila nova datoteka, a na web stranici se dodao novi post.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/added_new_post.png}
+    \caption{Novi post dodan na stranicu}
+    \label{fig:added_new_post}
+\end{figure}
+
+Sljedeća stranica, "O meni" (navlink "about") sadrži informacije o vlasniku stranice. Informacije obuhvaćaju osobne podatke, kao što su ime, prezime i datum rođenja, te još neke podatke.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/about_site.png}
+    \caption{Stranica "O meni"}
+    \label{fig:about_site}
+\end{figure}
+
+Zadnja stranica na ovoj web stranici je "Kontaktiraj me" (navlink "contact"), koja sadrži načine na koje se može kontaktirati vlasnika stranice.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/contact_site.png}
+    \caption{Stranica s kontakt informacijama}
+    \label{fig:contact_site}
+\end{figure}
+
+\subsection{Postovi}
+
+Na web stranici se nalaze 2 posta, prvi je s naslovom "Top 10 HR" i tiče se top 10 hrvatskih pjesama svih vremena po izboru vlasnika stranice. Youtube videi na post su umetnuti pomoću iframe html taga (skraćeno od \textit{inline frame}), koji se koristi za ugradnju nekog drugog dokumenta u trenutni HTML dokument. U ovom slučaju je ugrađen HTML kod iz svakog You Tube videa posebno.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/embed_code.png}
+    \caption{Ugrađen kod za prikaz YouTube videa}
+    \label{fig:embed_code}
+\end{figure}
+
+A ovako izgleda post, scrollanjem prema dolje mogu se vidjeti i ostalih 9 videa.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/top10post.png}
+    \caption{Prikaz dijela prvog posta}
+    \label{fig:top10post}
+\end{figure}
+
+Drugi post sadrži detaljan postupak izrade web stranice pomoću paketa blogdown, koji je uostalom opisan i u ovoj dokumentaciji. Na slici ispod može se vidjeti naslov i popis odjeljaka, a klik na bilo koji odjeljak vodi do sadržaja tog odjeljka, isto kao i u ovoj dokumentaciji.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{../img/post_blogdown.png}
+    \caption{Prikaz dijela drugog posta}
+    \label{fig:post_blogdown}
+\end{figure}
+
+Link na ovu web stranicu: \url{https://personalwebsitewithblogdown.netlify.app/}
+
+
+Link na github repozitorij: \url{https://github.com/luka28798/personalwebsitewithblogdown}
+
+\newpage
+
+
+\phantomsection
+\addcontentsline{toc}{section}{Literatura}
+\bibliographystyle{plain}
+
+\begin{thebibliography}{1}
+
+\bibitem{R Markdown} 
+Yihui Xie, J. J. Allaire, Garrett Grolemund.
+\textit{R Markdown: The Definitive Guide},
+2017.
+
+\bibitem{blogdown} 
+Yihui Xie, Amber Thomas, Alison Presmanes Hill.
+\textit{blogdown: Creating Websites with R Markdown},
+2018.
+
+\end{thebibliography}

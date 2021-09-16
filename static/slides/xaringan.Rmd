@@ -1,0 +1,104 @@
+---
+title: "BLOGDOWN: KREIRANJE WEB STRANICA POMOĆU R MARKDOWN"
+
+author: "Luka Strapač & Marko Šenk"
+
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+???
+
+---
+
+# R Markdown
+
+format za pisanje
+
+--
+
+izrada dinamičkih dokumenata, prezentacija i izvještaja
+
+--
+
+markdown sintaksa + code chunks
+
+--
+
+.Rmd datoteke mogu biti renderirane u više izlaznih formata
+
+---
+
+# Hugo
+
+najpoznatiji generator statičkih stranica
+
+--
+
+podiže stranicu kad se stvori novi ili promijeni već postojeći sadržaj
+
+---
+
+# blogdown
+
+R Markdown + Hugo
+
+--
+
+Proizvod - statična web stranica od statičnih elemenata, nema server-side skripti
+         - generiran iz R Markdown dokumenta
+
+---
+
+# Prednosti
+
+R Markdown
+
+--
+
+statične datoteke, nema baze podataka
+
+--
+
+brze i sigurne
+
+---
+
+# Teme
+
+datoteke generirane od strane drugih korisnika
+
+--
+
+gotov izgled i funkcionalnosti
+
+--
+
+[Teme na službenoj Hugo stranici](https://themes.gohugo.io/)
+
+---
+
+# 1. primjer
+
+[Osobna web stranica](https://personalwebsitewithblogdown.netlify.app/)
+
+---
+
+# 2. primjer
+
+[Blog s analizom podataka](https://rstudioanalysis.netlify.app/)
+
+---
+class: inverse, middle, center
+
+HVALA NA PAŽNJI!

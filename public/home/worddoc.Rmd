@@ -1,0 +1,9 @@
+---
+title: "Word dokument"
+author: "Luka S."
+date: '2021-08-19'
+output: word_document
+---
+
+<!--more-->
+[Word](../../word/worddoc.docx)
